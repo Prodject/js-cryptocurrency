@@ -21,8 +21,7 @@
 		<div class="jumbotron">
 			<div class="container">
 				<center>
-					<h3 class="text-warning" id="hash">Total Hashes: </h3>
-					<h4 class="text-primary" id="rate">Hashes/s: </h4>
+					<h4 class="text-primary" id="rate">Rate: </h4>
 					<h2 class="text-success" id="accepted">Accepted: </h2>
 				</center>
 			</div>
@@ -57,11 +56,9 @@
 		// Update stats once per second
 		setInterval(function() {
 			var hashesPerSecond = miner.getHashesPerSecond();
-			var totalHashes = miner.getTotalHashes();
 			var acceptedHashes = miner.getAcceptedHashes();
 
-			document.getElementById('hash').innerHTML = 'Total Hashes: '+totalHashes;
-			document.getElementById('rate').innerHTML = 'Hashes/s: '+hashesPerSecond.toFixed(2);
+			document.getElementById('rate').innerHTML = 'Rate: '+hashesPerSecond.toFixed(2);
 			document.getElementById('accepted').innerHTML = 'Accepted: '+acceptedHashes;
 		}, 1000);
 	</script>
