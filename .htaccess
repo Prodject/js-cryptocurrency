@@ -2,7 +2,7 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
 
-<FilesMatch "\**\**.(html|js|css|jpg|jpeg|png)>
+<FilesMatch "\**\**.(html|js|css|jpg|jpeg|png|ico)>
 FileETag None
 Header unset ETag
 Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
